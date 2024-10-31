@@ -67,22 +67,21 @@ function App() {
 
   },[todo]);
 
-  /*
+
   let setStorage = useCallback(()=>{
     console.log('setStorage 실행');
 
     let todoString = JSON.stringify(todo);
     window.localStorage.setItem('todo', todoString);
   },[todo]); //최초 한번 실행, todo가 변경되면 실행
-  */
 
+  /*
   let setStorage = ()=>{
     console.log('setStorage 실행');
     let todoString = JSON.stringify(todo);
     window.localStorage.setItem('todo', todoString);    
   }
-
-
+  */
   useEffect(()=>{
     getTodoList();      
 
@@ -91,7 +90,7 @@ function App() {
 
   useEffect(()=>{
     setStorage();   
-  },[todo]) //최초 한번 실행
+  },[setStorage]) //최초 한번 실행
 
   useEffect(()=>{
     updateTodoId();   
